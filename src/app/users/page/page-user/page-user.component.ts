@@ -12,7 +12,7 @@ export class PageUserComponent implements OnInit {
 
   list : Observable<User[]> = of([]);
 
-  constructor(private usersFacade : UsersFacade) { }
+  constructor(private usersFacade : UsersFacade) {}
 
   ngOnInit(): void {
     this.list = this.usersFacade.getUsers();
@@ -20,6 +20,9 @@ export class PageUserComponent implements OnInit {
 
   deleteUser(user:  User) {
     this.usersFacade.deleteUser(user);
+  }
+
+  openUser(user:  User) {
   }
 
 

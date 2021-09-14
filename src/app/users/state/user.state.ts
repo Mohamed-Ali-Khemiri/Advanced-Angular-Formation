@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
-import { User } from "../models/user.model";
+import { BehaviorSubject, of } from "rxjs";
+import { User } from "../models/user.model";;
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +25,11 @@ export class UserState {
     deleteUser(id: number) {
       const currentValue = this.listUsers$.getValue();
       this.listUsers$.next(currentValue.filter(user => user.id !== id));
+    }
+
+    getSingleUser(id: number) : User | undefined {
+      const currentValue = this.listUsers$.getValue();
+      return currentValue.find(user => user.id === +id);
     }
 
 }

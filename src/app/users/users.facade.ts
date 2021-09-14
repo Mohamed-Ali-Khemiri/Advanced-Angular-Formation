@@ -10,8 +10,6 @@ import { tap } from 'rxjs/operators';
 })
 export class UsersFacade {
 
-  // private users$: Observable<User[]>;
-
   constructor(private userApi: UserApiService, private userState : UserState) {
   }
 
@@ -31,6 +29,10 @@ export class UsersFacade {
       () => console.log('User deleted'),
       (error) => this.userState.addUser(user)
     )
+  }
+
+  getSingleUserDetails(id: number) : User | undefined {
+    return this.userState.getSingleUser(id);
   }
 
 }
