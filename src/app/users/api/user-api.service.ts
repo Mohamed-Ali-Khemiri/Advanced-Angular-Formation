@@ -15,6 +15,10 @@ export class UserApiService {
     return this.http.get<User[]>(this.apiUrl);
   }
 
+  getSingleUser(id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${id}`);
+  }
+
   deleteUser(id: number): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${id}`, '');
   }

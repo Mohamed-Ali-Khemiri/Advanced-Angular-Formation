@@ -3,6 +3,7 @@ import { UserApiService } from "./api/user-api.service";
 import { User } from "./models/user.model";
 import { UserState } from "./state/user.state";
 import { tap } from 'rxjs/operators';
+import { Observable, of } from "rxjs";
 
 
 @Injectable({
@@ -31,8 +32,8 @@ export class UsersFacade {
     )
   }
 
-  getSingleUserDetails(id: number) : User | undefined {
-    return this.userState.getSingleUser(id);
+  getSingleUserDetails(id: number) : Observable<User> {
+    return this.userApi.getSingleUser(id);
   }
 
 }

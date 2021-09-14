@@ -26,10 +26,4 @@ export class UserState {
       const currentValue = this.listUsers$.getValue();
       this.listUsers$.next(currentValue.filter(user => user.id !== id));
     }
-
-    getSingleUser(id: number) : User | undefined {
-      const currentValue = this.listUsers$.getValue();
-      return currentValue.find(user => user.id === +id);
-    }
-
 }

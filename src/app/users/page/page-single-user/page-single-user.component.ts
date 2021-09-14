@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable, of } from 'rxjs';
 import { User } from '../../models/user.model';
 import { UsersFacade } from '../../users.facade';
 
@@ -9,9 +10,8 @@ import { UsersFacade } from '../../users.facade';
   styleUrls: ['./page-single-user.component.css']
 })
 export class PageSingleUserComponent implements OnInit {
-  public user : User | undefined;
+  user$ : Observable<User> = of();
   constructor(private route: ActivatedRoute, private usersFacade: UsersFacade) {
-    usersFacade.getUsers();
   }
 
   ngOnInit(): void {
@@ -19,7 +19,7 @@ export class PageSingleUserComponent implements OnInit {
   }
 
   getUserDetails(id: number)  {
-    this.user = this.usersFacade.getSingleUserDetails(id);
+    this.user$ = this.usersFacade.getSingleUserDetails(id);
   }
 
 }
