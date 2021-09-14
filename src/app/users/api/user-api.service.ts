@@ -23,7 +23,7 @@ export class UserApiService {
     return this.http.put<User>(`${this.apiUrl}/${id}`, '');
   }
 
-  addUser(user: object): Observable<User> {
+  addUser(user: object): Observable<any> {
     return this.http.post<User>(`${this.apiUrl}`, user);
   }
 
