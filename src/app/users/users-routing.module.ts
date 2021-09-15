@@ -7,7 +7,7 @@ import { UserResolverResolver } from '../shared/services/user-resolver.resolver'
 @NgModule({
   imports: [RouterModule.forChild([
     { path: '', component: PageUserComponent},
-    { path: ':id', component: PageSingleUserComponent, resolve: {user$ : UserResolverResolver} },
+    { path: ':id', component: PageSingleUserComponent, resolve: {user : UserResolverResolver} },
   ])],
   exports: [RouterModule]
 })

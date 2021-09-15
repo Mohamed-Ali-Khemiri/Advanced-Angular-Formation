@@ -15,7 +15,8 @@ export class PageSingleUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getUserDetails(this.route.snapshot.params.id);
+    // this.getUserDetails(this.route.snapshot.params.id);
+    this.user$ = this.route.snapshot.data.user;
   }
 
   getUserDetails(id: number)  {

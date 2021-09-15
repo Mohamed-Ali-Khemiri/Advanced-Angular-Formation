@@ -11,8 +11,6 @@ export class UserResolverResolver implements Resolve<Observable<User>> {
   constructor(private api: UserApiService) {}
 
   async resolve(route: ActivatedRouteSnapshot): Promise<Observable<User>> {
-    const {id = null} = route.params;
-    const item = await this.api.getSingleUser(id);
-    return item;
+    return await this.api.getSingleUser(route.params.id);
   }
 }
