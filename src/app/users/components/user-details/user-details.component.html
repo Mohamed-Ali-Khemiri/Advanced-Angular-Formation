@@ -1,3 +1,4 @@
+<ng-content select="[header]"></ng-content>
 <div *ngIf="user$ | async as user">
   <ul>
     <li>Id : {{user.id}}</li>
@@ -6,7 +7,9 @@
     <li>Email : {{user.email}}</li>
     <li>Website : {{user.website}}</li>
   </ul>
-
 <br><br>
-<a [routerLink]="'/user/' + (1+ user.id)">Next</a>
+<a *ngIf="user.id > 1" [routerLink]="'/user/' + (+user.id - 1) ">Previous</a> &nbsp; &nbsp;
+<a *ngIf="user.id < 10" [routerLink]="'/user/' + (1+ user.id)">Next</a>
 </div>
+<br><br>
+<ng-content select="[footer]"></ng-content>
