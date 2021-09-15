@@ -10,7 +10,7 @@ import { User } from 'src/app/users/models/user.model';
 export class UserResolverResolver implements Resolve<Observable<User>> {
   constructor(private api: UserApiService) {}
 
-  async resolve(route: ActivatedRouteSnapshot) {
+  async resolve(route: ActivatedRouteSnapshot): Promise<Observable<User>> {
     const {id = null} = route.params;
     const item = await this.api.getSingleUser(id);
     return item;
