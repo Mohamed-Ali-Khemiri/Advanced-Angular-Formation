@@ -22,8 +22,4 @@ export class PageUserComponent implements OnInit {
     this.usersFacade.deleteUser(user);
   }
 
-  openUser(user:  User) {
-  }
-
-
 }

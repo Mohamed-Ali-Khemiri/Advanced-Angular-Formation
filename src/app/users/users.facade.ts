@@ -15,7 +15,11 @@ export class UsersFacade {
   }
 
   getUsers() {
-    return this.userApi.getUsers().pipe(tap(val => this.userState.setUsers(val)));
+    if ( this.userState.checkList()) {
+      return this.userState.getUsers();
+    } else {
+      return this.userApi.getUsers().pipe(tap(val => this.userState.setUsers(val)));
+    }
   }
 
   addUser(user: User){

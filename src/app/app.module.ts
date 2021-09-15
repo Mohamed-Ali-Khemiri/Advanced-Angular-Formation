@@ -8,10 +8,14 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { UsersModule } from './users/users.module';
+import { PageAdminComponent } from './admin/page-admin/page-admin.component';
+import { PagesComponent } from './deposita/pages/pages.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageAdminComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,

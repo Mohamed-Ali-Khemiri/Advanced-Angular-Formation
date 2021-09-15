@@ -1,6 +1,9 @@
+<h1>List Users</h1>
 <ul>
   <li *ngFor="let user of list | async"> {{user.id}} <br> {{user.name}}
     <button><a [routerLink]="['../user' , user.id]">Open</a></button>
     <button (click)="deleteUser(user)">delete</button>
   </li>
 </ul>
+<br><br>
+<a routerLink="/home">back</a>

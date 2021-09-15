@@ -26,4 +26,13 @@ export class UserState {
       const currentValue = this.listUsers$.getValue();
       this.listUsers$.next(currentValue.filter(user => user.id !== id));
     }
+
+    checkList() {
+      const currentValue = this.listUsers$.getValue();
+      if ( currentValue && currentValue.length > 0) {
+        return true;
+      }
+      return false;
+    }
+
 }

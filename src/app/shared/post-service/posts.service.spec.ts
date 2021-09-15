@@ -39,7 +39,14 @@ describe('PostsService', () => {
 
   it('post posts', () => {
     const methodUrl = 'https://jsonplaceholder.typicode.com/posts';
-    const expectedResult = { id : 101 };
+    const expectedResult =
+      {
+        "userId": 1,
+        "id": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+      }
+
 
     service.postPosts({}).subscribe(result => {
       expect(result).toEqual(expectedResult);
