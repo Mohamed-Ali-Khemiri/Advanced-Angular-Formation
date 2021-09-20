@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { PagesComponent } from './deposita/pages/pages.component';
 import { PageHomeComponent } from './home/page-home/page-home.component';
+import { PageLoginComponent } from './login/pages/page-login/page-login.component';
+import { PageSigninComponent } from './login/pages/page-signin/page-signin.component';
 import { AuthGuard } from './shared/guard/auth.guard';
 
 @NgModule({
   imports: [RouterModule.forRoot([
     { path: 'home', component: PageHomeComponent},
-    { path: 'home', component: PageHomeComponent},
+    { path: 'login', component: PageLoginComponent},
+    { path: 'signin', component: PageSigninComponent},
     {
       path:'deposit',
       component: PagesComponent,

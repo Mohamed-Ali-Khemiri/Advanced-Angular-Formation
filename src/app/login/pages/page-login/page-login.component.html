@@ -1,0 +1,9 @@
+<h1>Login</h1>
+<br><br>
+<form [formGroup]='loginForm' class="text-center border border-light p-5" (ngSubmit)='onLogin()'>
+  <input formControlName='username' type="text" class="form-control mb-4" placeholder="Enter User Name" />
+  <input formControlName='password' type="text" class="form-control mb-4" placeholder="Enter Password" />
+  <button class="btn btn-danger" [disabled]='loginForm.invalid'>Login</button>
+</form>
+<br><br>
+<a [routerLink]="['/signin']">Signin</a>

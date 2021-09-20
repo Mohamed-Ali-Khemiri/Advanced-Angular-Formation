@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Ticket, Ticket2 } from '../../models/model-ticket';
 
 @Component({
   selector: 'app-page-new-ticket',
@@ -9,7 +8,6 @@ import { Ticket, Ticket2 } from '../../models/model-ticket';
 })
 export class PageNewTicketComponent implements OnInit {
   buyTicketForm! : FormGroup;
-  // tableTickets : Ticket[] = [];
 
   constructor(private fb: FormBuilder) {
     this.buyTicketForm = this.fb.group(
