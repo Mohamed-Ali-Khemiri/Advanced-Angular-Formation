@@ -3,7 +3,8 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
+  HTTP_INTERCEPTORS
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/shared/services/auth/auth.service';
@@ -21,4 +22,10 @@ export class UserInterceptor implements HttpInterceptor {
     })
     return next.handle(clonedrequest);
   }
+}
+
+export const userProvider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: UserInterceptor,
+  multi: true
 }

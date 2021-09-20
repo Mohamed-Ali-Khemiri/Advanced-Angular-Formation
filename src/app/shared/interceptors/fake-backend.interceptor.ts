@@ -4,7 +4,8 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpResponse
+  HttpResponse,
+  HTTP_INTERCEPTORS
 } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, dematerialize, materialize, mergeMap } from 'rxjs/operators';
@@ -105,3 +106,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     }
   }
 }
+
+export const fakeBackendProvider = {
+  // use fake backend in place of Http service for backend-less development
+  provide: HTTP_INTERCEPTORS,
+  useClass: FakeBackendInterceptor,
+  multi: true
+};
