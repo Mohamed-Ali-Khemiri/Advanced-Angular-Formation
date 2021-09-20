@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PageNewTicketComponent } from './pages/page-new-ticket/page-new-ticket.component';
 import { TicketsRoutingRoutingModule } from './tickets-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -13,7 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     TicketsRoutingRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class TicketsModule { }
