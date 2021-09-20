@@ -10,6 +10,7 @@ import { HomeModule } from './home/home.module';
 import { UsersModule } from './users/users.module';
 import { PageAdminComponent } from './admin/page-admin/page-admin.component';
 import { PagesComponent } from './deposita/pages/pages.component';
+import { TicketsModule } from './tickets/tickets.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PagesComponent } from './deposita/pages/pages.component';
     UsersModule,
     HomeModule,
     CoreModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TicketsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

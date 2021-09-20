@@ -23,6 +23,7 @@ import { AuthGuard } from './shared/guard/auth.guard';
     { path: 'admin', loadChildren: () => import('./admin/admin-routing.module').then(mod => mod.AdminRoutingModule),
     canLoad: [AuthGuard] },
     { path: 'user', loadChildren: () => import('./users/users-routing.module').then(mod => mod.UsersRoutingModule)},
+    { path: 'ticket', loadChildren: () => import('./tickets/tickets-routing.module').then(mod => mod.TicketsRoutingRoutingModule)},
     { path: '', redirectTo: 'home', pathMatch: 'full'  }
   ])],
   exports: [RouterModule]
