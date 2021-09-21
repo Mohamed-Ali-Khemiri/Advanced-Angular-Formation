@@ -5,9 +5,9 @@ import { Directive, ElementRef, HostListener, OnInit, Renderer2, ViewChild } fro
 })
 export class DirHoverDirective{
   constructor(
-    private elementRef:ElementRef,
+    public elementRef:ElementRef,
     public renderer: Renderer2,
-    private div: ElementRef
+    public div: ElementRef
   ) {
     this.div = this.renderer.createElement('div');
     const text = this.renderer.createText('Testing');

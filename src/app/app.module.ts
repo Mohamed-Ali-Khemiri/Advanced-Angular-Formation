@@ -8,10 +8,12 @@ import { UsersModule } from './users/users.module';
 import { PageAdminComponent } from './admin/page-admin/page-admin.component';
 import { PagesComponent } from './deposita/pages/pages.component';
 import { TicketsModule } from './tickets/tickets.module';
-import { authProvider } from './shared/interceptors/auth.interceptor';
+// import { authProvider } from './shared/interceptors/auth.interceptor';
 import { LoginModule } from './login/login.module';
-import { fakeBackendProvider } from './shared/interceptors/fake-backend.interceptor';
+// import { fakeBackendProvider } from './shared/interceptors/fake-backend.interceptor';
 import { CocktailsModule } from './cocktails/cocktails.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,13 @@ import { CocktailsModule } from './cocktails/cocktails.module';
     AppRoutingModule,
     TicketsModule,
     LoginModule,
-    CocktailsModule
+    CocktailsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   // providers: [
   //   [
