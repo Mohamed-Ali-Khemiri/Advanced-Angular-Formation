@@ -5,8 +5,8 @@ import { PageSingleUserComponent } from './page/page-single-user/page-single-use
 import { UsersRoutingModule } from './users-routing.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
-import { UserInterceptor, userProvider } from './interceptors/user.interceptor';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+// import { UserInterceptor, userProvider } from './interceptors/user.interceptor';
+// import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 
@@ -27,8 +27,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     PageSingleUserComponent,
     UsersRoutingModule
   ],
-  providers: [
-    userProvider
-  ]
+  // providers: [
+  //   userProvider
+  // ]
 })
 export class UsersModule { }

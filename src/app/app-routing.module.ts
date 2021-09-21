@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { PageCocktailsComponent } from './cocktails/pages/page-cocktails/page-cocktails.component';
 import { PagesComponent } from './deposita/pages/pages.component';
 import { PageHomeComponent } from './home/page-home/page-home.component';
 import { PageLoginComponent } from './login/pages/page-login/page-login.component';
@@ -11,6 +12,7 @@ import { AuthGuard } from './shared/guard/auth.guard';
     { path: 'home', component: PageHomeComponent},
     { path: 'login', component: PageLoginComponent},
     { path: 'signin', component: PageSigninComponent},
+    { path: 'cocktail', component: PageCocktailsComponent},
     {
       path:'deposit',
       component: PagesComponent,

@@ -11,6 +11,7 @@ import { TicketsModule } from './tickets/tickets.module';
 import { authProvider } from './shared/interceptors/auth.interceptor';
 import { LoginModule } from './login/login.module';
 import { fakeBackendProvider } from './shared/interceptors/fake-backend.interceptor';
+import { CocktailsModule } from './cocktails/cocktails.module';
 
 @NgModule({
   declarations: [
@@ -25,14 +26,15 @@ import { fakeBackendProvider } from './shared/interceptors/fake-backend.intercep
     CoreModule,
     AppRoutingModule,
     TicketsModule,
-    LoginModule
+    LoginModule,
+    CocktailsModule
   ],
-  providers: [
-    [
-      authProvider,
-      fakeBackendProvider
-    ]
-  ],
+  // providers: [
+  //   [
+  //     authProvider,
+  //     fakeBackendProvider
+  //   ]
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,11 @@
+<h1>Search Cocktails</h1>
+<form [formGroup]="myForm">
+  <input type="text" name="search" id="search" formControlName="search">
+</form>
+
+<br><br>
+
+<div *ngFor="let item of (result$ | async)?.drinks">
+  <span>{{item['strDrink']}}</span>
+  <br>
+</div>
